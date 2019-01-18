@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7585c852d8f6e6f1fef3b9c3ed4768c9",
+    "content-hash": "9c5c482a5c2448a1c439a441f3da2529",
     "packages": [
         {
             "name": "consolidation/annotated-command",
@@ -1316,16 +1316,16 @@
         },
         {
             "name": "codeception/base",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/base.git",
-                "reference": "ec6b7bd4d78c1adba3dbd5c3c52fc683e8aef6de"
+                "reference": "50aaf8bc032823018aed8d14114843b4a2c52a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/base/zipball/ec6b7bd4d78c1adba3dbd5c3c52fc683e8aef6de",
-                "reference": "ec6b7bd4d78c1adba3dbd5c3c52fc683e8aef6de",
+                "url": "https://api.github.com/repos/Codeception/base/zipball/50aaf8bc032823018aed8d14114843b4a2c52a48",
+                "reference": "50aaf8bc032823018aed8d14114843b4a2c52a48",
                 "shasum": ""
             },
             "require": {
@@ -1402,7 +1402,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2018-10-29T21:37:15+00:00"
+            "time": "2019-01-01T21:20:37+00:00"
         },
         {
             "name": "codeception/phpunit-wrapper",
