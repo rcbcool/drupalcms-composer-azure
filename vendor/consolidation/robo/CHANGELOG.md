@@ -1,8 +1,8 @@
 # Changelog
 
-### 1.3.5 1/1/2019
+### 1.4.0 - 1.4.3 1/2/2019
 
-* Improved paramameter injection (#822)
+* BUGFIX: Back out 1.3.5, which contained breaking changes. Create a 1.x branch for continuation of compatible versions, and move breaking code to 2.x development (on master branch).
 
 ### 1.3.4 12/20/2018
 
