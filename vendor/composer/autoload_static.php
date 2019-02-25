@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit29102bac90282052d51df2c2ae187576
+class ComposerStaticInit43c611124e4b6eef77af9ad28cede614
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -34,6 +34,10 @@ class ComposerStaticInit29102bac90282052d51df2c2ae187576
     );
 
     public static $prefixLengthsPsr4 = array (
+        'z' => 
+        array (
+            'zaporylie\\ComposerDrupalOptimizations\\' => 38,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -182,6 +186,10 @@ class ComposerStaticInit29102bac90282052d51df2c2ae187576
     );
 
     public static $prefixDirsPsr4 = array (
+        'zaporylie\\ComposerDrupalOptimizations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zaporylie/composer-drupal-optimizations/src',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -1187,10 +1195,10 @@ class ComposerStaticInit29102bac90282052d51df2c2ae187576
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit29102bac90282052d51df2c2ae187576::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit29102bac90282052d51df2c2ae187576::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit29102bac90282052d51df2c2ae187576::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit29102bac90282052d51df2c2ae187576::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit43c611124e4b6eef77af9ad28cede614::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit43c611124e4b6eef77af9ad28cede614::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit43c611124e4b6eef77af9ad28cede614::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit43c611124e4b6eef77af9ad28cede614::$classMap;
 
         }, null, ClassLoader::class);
     }
