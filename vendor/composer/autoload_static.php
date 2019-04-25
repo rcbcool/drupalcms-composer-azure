@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf
+class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -624,7 +624,7 @@ class ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf
             ),
             'DrupalPractice\\' => 
             array (
-                0 => __DIR__ . '/..' . '/drupal/coder/coder_sniffer/Drupal',
+                0 => __DIR__ . '/..' . '/drupal/coder/coder_sniffer/DrupalPractice',
             ),
             'Doctrine\\Common\\Lexer\\' => 
             array (
@@ -1209,10 +1209,10 @@ class ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitfb76ac7566200735dcaf5be9e4498bdf::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$classMap;
 
         }, null, ClassLoader::class);
     }
