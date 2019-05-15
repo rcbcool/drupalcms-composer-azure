@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
+class ComposerStaticInita2d5535114fe2925d31dc8c8ff66bacb
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -125,6 +125,7 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
         ),
         'J' => 
         array (
+            'JsonSchema\\' => 11,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -140,6 +141,10 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
             'Grasmash\\YamlExpander\\' => 22,
             'Grasmash\\Expander\\' => 18,
             'Goutte\\' => 7,
+        ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
         array (
@@ -398,6 +403,10 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
         ),
+        'JsonSchema\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -433,6 +442,10 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
         'Goutte\\' => 
         array (
             0 => __DIR__ . '/..' . '/fabpot/goutte/Goutte',
+        ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
         ),
         'Drush\\Internal\\' => 
         array (
@@ -604,13 +617,13 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
+            'PEAR' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/pear_exception',
+            ),
         ),
         'E' => 
         array (
-            'Egulias\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/egulias/email-validator/src',
-            ),
             'EasyRdf_' => 
             array (
                 0 => __DIR__ . '/..' . '/easyrdf/easyrdf/lib',
@@ -643,6 +656,24 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
                 0 => __DIR__ . '/..' . '/dflydev/dot-access-configuration/src',
             ),
         ),
+        'C' => 
+        array (
+            'Console' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/console_getopt',
+            ),
+        ),
+        'A' => 
+        array (
+            'Archive_Tar' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/archive_tar',
+            ),
+        ),
+    );
+
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/..' . '/pear/pear-core-minimal/src',
     );
 
     public static $classMap = array (
@@ -1209,10 +1240,11 @@ class ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitab3fca51eaba45ffe976dfab1826cb84::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita2d5535114fe2925d31dc8c8ff66bacb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita2d5535114fe2925d31dc8c8ff66bacb::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita2d5535114fe2925d31dc8c8ff66bacb::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInita2d5535114fe2925d31dc8c8ff66bacb::$fallbackDirsPsr0;
+            $loader->classMap = ComposerStaticInita2d5535114fe2925d31dc8c8ff66bacb::$classMap;
 
         }, null, ClassLoader::class);
     }
