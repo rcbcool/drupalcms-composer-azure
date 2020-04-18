@@ -1,0 +1,76 @@
+diff --git a/core/lib/Drupal/Core/Controller/ArgumentResolver/RawParameterValueResolver.php b/core/lib/Drupal/Core/Controller/ArgumentResolver/RawParameterValueResolver.php
+new file mode 100644
+index 0000000000..d8aa3525c4
+--- /dev/null
++++ b/core/lib/Drupal/Core/Controller/ArgumentResolver/RawParameterValueResolver.php
+@@ -0,0 +1,33 @@
++<?php
++
++namespace Drupal\Core\Controller\ArgumentResolver;
++
++use Symfony\Component\HttpFoundation\Request;
++use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
++use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
++
++@trigger_error(__NAMESPACE__ . '\RawParameterValueResolver is deprecated in Drupal 8.8.1 and will be removed before Drupal 9.0.0. This class exists to prevent problems with updating core using Drush 8. There is no replacement.', E_USER_DEPRECATED);
++
++/**
++ * Exists to prevent problems with updating core using Drush 8.
++ *
++ * @deprecated in Drupal 8.8.1 and will be removed before Drupal 9.0.0. There is
++ *   no replacement.
++ */
++final class RawParameterValueResolver implements ArgumentValueResolverInterface {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function supports(Request $request, ArgumentMetadata $argument) {
++    return FALSE;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function resolve(Request $request, ArgumentMetadata $argument) {
++    // This will never be called as self::supports() returns FALSE.
++  }
++
++}
+diff --git a/core/tests/Drupal/Tests/Core/Controller/ControllerResolverTest.php b/core/tests/Drupal/Tests/Core/Controller/ControllerResolverTest.php
+index 745c4f3573..d7dd9588be 100644
+--- a/core/tests/Drupal/Tests/Core/Controller/ControllerResolverTest.php
++++ b/core/tests/Drupal/Tests/Core/Controller/ControllerResolverTest.php
+@@ -7,6 +7,7 @@
+ 
+ namespace Drupal\Tests\Core\Controller;
+ 
++use Drupal\Core\Controller\ArgumentResolver\RawParameterValueResolver;
+ use Drupal\Core\Controller\ControllerResolver;
+ use Drupal\Core\DependencyInjection\ClassResolver;
+ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+@@ -22,6 +23,7 @@
+ use Symfony\Component\HttpFoundation\Request;
+ use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
+ use Psr\Http\Message\ServerRequestInterface;
++use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
+ 
+ /**
+  * @coversDefaultClass \Drupal\Core\Controller\ControllerResolver
+@@ -260,6 +262,16 @@ public function testGetArgumentsWithRouteMatchAndPsr7Request() {
+     $this->assertInstanceOf('Psr\Http\Message\ServerRequestInterface', $arguments[1], 'Ensure that the PSR-7 object is passed along as well');
+   }
+ 
++  /**
++   * @group legacy
++   * @expectedDeprecation Drupal\Core\Controller\ArgumentResolver\RawParameterValueResolver is deprecated in Drupal 8.8.1 and will be removed before Drupal 9.0.0. This class exists to prevent problems with updating core using Drush 8. There is no replacement.
++   */
++  public function testRawParameterValueResolver() {
++    $resolver = new RawParameterValueResolver();
++    $metadata = $this->prophesize(ArgumentMetadata::class);
++    $this->assertFalse($resolver->supports(Request::create('/test'), $metadata->reveal()));
++  }
++
+ }
+ 
+ class MockController {
